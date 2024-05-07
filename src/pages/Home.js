@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import About from '../components/About';
-import Testimonials from '../pages/Testimonials.js'; // Import Testimonials component
-import Stats from '../pages/Stats.js'
+import Testimonials from '../pages/Testimonials.js';
+import Stats from '../pages/Stats.js';
 import projectRequestImage from '../assets/CardProduct.png';
 import projectRequestImage2 from '../assets/HeroImage.png';
 import project1 from '../assets/CardProduct.png';
@@ -15,6 +15,7 @@ import project6 from '../assets/HeroImage.png';
 function Home() {
   const companies = ['Company 1', 'Company 2', 'Company 3', 'Company 4', 'Company 5'];
   const [showMore, setShowMore] = useState(false);
+  const [activeQuestion, setActiveQuestion] = useState(null);
 
   const projects = [
     { id: 1, image: project1, path: '/project1' },
@@ -26,6 +27,43 @@ function Home() {
   ];
 
   const visibleProjects = showMore ? projects : projects.slice(0, 4);
+
+  const faqData = [
+    {
+      id: 1,
+      question: 'What services do you offer?',
+      answer: 'We offer a wide range of design services, including UI/UX design, web design, mobile app design, and branding.'
+    },
+    {
+      id: 2,
+      question: 'How long does the design process typically take?',
+      answer: 'The timeline can vary depending on the project scope and complexity, but we strive to deliver high-quality designs within a reasonable timeframe.'
+    },
+    {
+      id: 3,
+      question: 'Can you provide examples of your previous work?',
+      answer: 'Absolutely! You can find a selection of our previous projects in the portfolio section of our website.'
+    },
+    {
+      id: 4,
+      question: 'How do you ensure user-friendly designs?',
+      answer: 'We follow a user-centered design approach, conducting thorough research, testing, and iterating to create intuitive and engaging experiences.'
+    },
+    {
+      id: 5,
+      question: 'What is your design process?',
+      answer: 'Our design process typically involves discovery, wireframing, visual design, prototyping, and testing before finalizing the designs.'
+    },
+    {
+      id: 6,
+      question: 'Do you offer ongoing support and maintenance?',
+      answer: 'Yes, we offer ongoing support and maintenance services to ensure your designs remain up-to-date and functioning optimally.'
+    }
+  ];
+
+  const toggleQuestion = (id) => {
+    setActiveQuestion(activeQuestion === id ? null : id);
+  };
 
   return (
     <div className="container mx-auto py-8">
@@ -99,6 +137,25 @@ function Home() {
       {/* Stats section */}
       <Stats />
 
+      {/* Frequently Asked Questions section */}
+      <div className="mb-8 text-center">
+        <h2 className="text-3xl font-bold mb-4 mt-20">Frequently Asked Questions</h2>
+        <div className="max-w-3xl mx-auto">
+          {faqData.map((faq) => (
+            <div
+              key={faq.id}
+              className="bg-gray-100 rounded-lg p-4 mb-4 cursor-pointer"
+              onClick={() => toggleQuestion(faq.id)}
+            >
+              <h3 className="text-lg font-semibold">{faq.question}</h3>
+              {activeQuestion === faq.id && (
+                <p className="mt-2 text-gray-700">{faq.answer}</p>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* About section */}
       <div className="mt-16 text-center">
         <About />
@@ -106,5 +163,4 @@ function Home() {
     </div>
   );
 }
-
 export default Home;
