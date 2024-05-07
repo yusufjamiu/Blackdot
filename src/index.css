@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.marquee {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-left: 0; /* Remove left margin */
+  margin-right: 0; /* Remove right margin */
+}
+
+.marquee span {
+  animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes fadeInOut {
+  0%, 90% {
+    opacity: 0;
+  }
+  5%, 95% {
+    opacity: 1;
+  }
+}
