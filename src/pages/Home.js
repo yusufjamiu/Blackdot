@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import About from '../components/About';
 import Testimonials from '../pages/Testimonials.js';
 import Stats from '../pages/Stats.js';
-import projectRequestImage from '../assets/CardProduct.png';
-import projectRequestImage2 from '../assets/HeroImage.png';
-import project1 from '../assets/CardProduct.png';
-import project2 from '../assets/HeroImage.png';
-import project3 from '../assets/CardProduct.png';
-import project4 from '../assets/HeroImage.png';
+import projectRequestImage from '../assets/Cover1.png';
+import projectRequestImage2 from '../assets/Cover2.png';
+import project1 from '../assets/Cover3.png';
+import project2 from '../assets/Logo1.jpg';
+import project3 from '../assets/Book1.jpg';
+import project4 from '../assets/Book2.jpg';
 import project5 from '../assets/CardProduct.png';
 import project6 from '../assets/HeroImage.png';
 
@@ -68,10 +68,10 @@ function Home() {
   return (
     <div className="container mx-auto py-8">
       <div className="mb-8 text-center">
-        <h2 className="text-6xl lg:text-9xl text-center font-bold mb-2 mt-20">Exceptional design</h2>
+        <h2 className="text-6xl lg:text-9xl text-center font-bold mb-2 mt-20">Blackdot</h2>
         <div className="flex flex-col items-center">
           <p className="text-gray-700 justify-center text-xl max-auto max-w-xl mt-2 font-sans">
-            Elevating product design for innnovators who demand pixel-perfect precision and user-centric passion.
+            Discover the Ultimate Solution to Dotting the 'i' and Crossing the 't's.
           </p>
         </div>
         <Link to="/project-request" className="inline-block text-blue-700 font-semibold py-2 px-4 mt-4">
@@ -80,10 +80,10 @@ function Home() {
         <img src={projectRequestImage} alt="Project Request" className="mt-4" />
       </div>
       <div className="mb-8 text-center">
-        <h2 className="text-3xl text-center font-bold mb-2 mt-20">The nickname me the Design Guru</h2>
+        <h2 className="text-3xl text-center font-bold mb-2 mt-20">Designing for the future</h2>
         <div className="flex flex-col items-center">
           <p className="text-gray-700 justify-center text-2xl max-auto max-w-2xl mt-2 mb-10 font-sans">
-            Blackdot transforms your visions into intuitive and user-friendly product experiences
+            Adept at crasfting seamless user experiences, I leverage cutting-edge technologies to drive innovation.
           </p>
         </div>
         <img src={projectRequestImage2} alt="Project Request" className="mt-4" />
